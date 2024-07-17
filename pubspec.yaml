@@ -1,0 +1,36 @@
+name: quote_generator_mobile_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hexcolor: ^3.0.1
+  http: ^0.13.4  
+  shared_preferences: ^2.0.15
+  flutter_bloc: ^8.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: GemunuLibre
+      fonts: 
+        - asset: lib/fonts/GemunuLibre-Bold.ttf
+          weight: 700
+        - asset: lib/fonts/GemunuLibre-SemiBold.ttf
+          weight: 600
+        - asset: lib/fonts/GemunuLibre-Medium.ttf 
+          weight: 500
+        - asset: lib/fonts/GemunuLibre-Regular.ttf
+          weight: 400
+        - asset: lib/fonts/GemunuLibre-Light.ttf       
+          weight: 300
