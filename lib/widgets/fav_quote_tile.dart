@@ -4,35 +4,23 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:quote_generator_mobile_app/bloc/bloc/home_bloc.dart';
 import 'package:quote_generator_mobile_app/models/quote.dart';
 
-class QuoteTile extends StatefulWidget {
-  final Quote quotes;
-
-  const QuoteTile({super.key, required this.quotes});
+class FavQuoteTile extends StatefulWidget {
+  const FavQuoteTile({super.key, required this.quote});
+final Quote quote;
 
   @override
-  State<QuoteTile> createState() => _QuoteTileState();
+  State<FavQuoteTile> createState() => _FavQuoteTileState();
 }
 
-class _QuoteTileState extends State<QuoteTile> {
-     
+class _FavQuoteTileState extends State<FavQuoteTile> {
+    HomeBloc? _homeBloc;
 @override
   void initState() {
     super.initState();
+        _homeBloc = BlocProvider.of<HomeBloc>(context);
 
   }
   @override
   Widget build(BuildContext context) {
-   
-        
-        return Container();
-          
-        
-      
-      
-      
-      
-      
-      
-    
-  }
+    return    Container(); }
 }

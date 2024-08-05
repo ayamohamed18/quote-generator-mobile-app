@@ -4,13 +4,31 @@ abstract class HomeBlocEvent {}
 class FetchRandomQuotes extends HomeBlocEvent{
 
 
-  FetchRandomQuotes();
 }
-
+   
 class AddToFavorites extends HomeBlocEvent{
-  final int id;
+  final String id;
 
-  AddToFavorites({required this.id});
+  AddToFavorites(this.id);
 }
+ 
+ class RemoveFromFavorites extends HomeBlocEvent{
+  final String id;
+
+  RemoveFromFavorites({required this.id});
+}
+class FetchFavoriteQuotesById extends HomeBlocEvent {
+  final String id;
+
+  FetchFavoriteQuotesById({required this.id});
+}
+
+class FetchFavoriteQuotes extends HomeBlocEvent{}
+
+/*class SearchQuotes extends HomeBlocEvent {
+  final String query;
+
+  SearchQuotes(this.query);
+}*/
 
 class FetchFavoriteQuotesCount extends HomeBlocEvent{}

@@ -16,7 +16,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => HomeBloc(_quoteServices, _storage),
+      create: (BuildContext context) => HomeBloc(_quoteServices, _storage)..add(FetchRandomQuotes()
+      ),
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: 'GemunuLibre',

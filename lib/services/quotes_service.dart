@@ -8,27 +8,33 @@ class QuoteService{
   final String apiUrl ="https://api.quotable.io";
 
 
-  Future <List<Quote>>fetchRandomQutes()async{
-    final response=await http.get(Uri.parse('$apiUrl/random'));
+  Future<Quote> fetchRandomQuote() async {
+    final response = await http.get(Uri.parse('$apiUrl/random'));
 
     if (response.statusCode == 200) {
-      List<dynamic> data=jsonDecode(response.body);
-  List<Quote> quotes = data.map((quoteJson) {
-        return Quote.fromJson(quoteJson as Map<String, dynamic>);
-      }).toList(); return quotes;
-    } else {
-      throw Exception('Failed to load quotes');
-    }
-  }
+       dynamic parsedJson = jsonDecode(response.body);
 
-  Future <Quote>fetchQuoteById(int id)async{
-    final response=await http.get(Uri.parse('$apiUrl/quotes/:id'));
-
- if (response.statusCode == 200) {
-      return Quote.fromJson(jsonDecode(response.body));
+      
+        return Quote.fromJson(parsedJson);
+      
     } else {
       throw Exception('Failed to load quote');
     }
   }
+
+  Future<Quote> fetchQuotesByIds(String id) async {
+
+final response = await http.get(Uri.parse('$apiUrl/quotes/$id'));                    
+      if (response.statusCode == 200) {
+       return Quote.fromJson(json.decode(response.body));
+      }else {
+      throw Exception('Failed to load item');
+    }
+    
+  }
+
+  
+
+ 
 
   }
